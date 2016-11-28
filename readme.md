@@ -4,7 +4,7 @@
 ### usage
 
 ```bash
-node autosuggest_index --eshost ESSERVER --index INDEXNAME  > result.txt
+node autosuggest_index --eshost ESSERVER --index INDEXNAME  > result.log
 ```
 
 ESSERVER is required for an Elasticsearch server, must include a protocol (http or https), a server name, and a port number (e.g. "https://fred:9200).
