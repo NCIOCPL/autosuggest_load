@@ -4,8 +4,6 @@ const options = commandLineArgs([
   { name: 'index' }
 ])
 
-
-
 var elasticsearch=require('elasticsearch');
 
 var client = new elasticsearch.Client( {  
