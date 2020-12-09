@@ -49,8 +49,7 @@ var body =
   }
 },
 "mappings":{
-  "terms": {
-    "properties": {
+   "properties": {
         "term": {
         "type": "text",
         "analyzer": "autocomplete_index",
@@ -63,7 +62,7 @@ var body =
         "type": "long"
       }
     }
-  }
+  
 }
 }
 client.indices.create({  
@@ -84,7 +83,7 @@ var bulk = [];
 var makebulk = function(terms,callback){
   for (var current in terms){
     bulk.push(
-      { index: {_index: options.index, _type: 'terms' } },
+      { index: {_index: options.index } },
       {
         'term': terms[current].term,
         'language': terms[current].language,
@@ -99,7 +98,6 @@ var indexall = function(madebulk,callback) {
   client.bulk({
     maxRetries: 5,
     index: options.index,
-    type: 'terms',
     body: madebulk
   },function(err,resp,status) {
       if (err) {
@@ -117,5 +115,4 @@ makebulk(inputfile,function(response){
     console.log(response);
   })
 });
-
 

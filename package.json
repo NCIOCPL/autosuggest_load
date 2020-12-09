@@ -3,7 +3,7 @@
     "version": "0.0.1",
     "private": true,
 	"dependencies": {
-    "elasticsearch": "^14.2.2",
+    "elasticsearch": "^16.7.1",
     "command-line-args": "3.0.2"
   }
 }
